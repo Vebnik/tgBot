@@ -1,5 +1,6 @@
 const { colorLog } = require('../system/chalkLog')
 const { commandListen } = require('../command/commandLogic')
+const { command } = require('../command/commandList')
 
 function StartApp (bot) {
 
@@ -12,9 +13,8 @@ function StartApp (bot) {
 
 		bot.hears('hi', ctx => { console.log(ctx) })
 
-		bot.command(['start', 'help'], ctx => { commandListen(ctx) })
+		bot.command(command, ctx => { commandListen(ctx) })
 	}
-
 }
 
 module.exports = { StartApp }
