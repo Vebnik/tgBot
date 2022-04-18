@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node -r dotenv/config app/app.js"
   },
   "keywords": [
     "bot"
@@ -12,6 +12,8 @@
   "author": "NikEvs",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "chalk": "^4.1.2",
+    "dotenv": "^16.0.0",
+    "telegraf": "^4.7.0"
   }
 }
