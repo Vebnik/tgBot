@@ -1,4 +1,5 @@
 const { command } = require('./commandList')
+const { colorLog } = require('../system/chalkLog')
 
 async function isCommand(ctx) {
 	let commandTrue
@@ -27,5 +28,9 @@ function commandListen(ctx) {
 	})
 }
 
+function eventHandler(ctx) {
+	const msgContent = ctx.message.text
+	colorLog.log(msgContent)
+}
 
-module.exports = { commandListen }
+module.exports = { commandListen, eventHandler }

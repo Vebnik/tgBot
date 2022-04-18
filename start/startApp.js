@@ -1,5 +1,5 @@
 const { colorLog } = require('../system/chalkLog')
-const { commandListen } = require('../command/commandLogic')
+const { commandListen, eventHandler } = require('../command/commandLogic')
 const { command } = require('../command/commandList')
 
 function StartApp (bot) {
@@ -9,7 +9,7 @@ function StartApp (bot) {
 	}
 
 	this.eventListen = () => {
-		bot.on('eventName', ctx => { console.log(ctx) })
+		bot.on('message', ctx => { eventHandler(ctx) })
 
 		bot.command(command, ctx => { commandListen(ctx) })
 	}
