@@ -10,5 +10,8 @@
     "bot"
   ],
   "author": "NikEvs",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
 }
