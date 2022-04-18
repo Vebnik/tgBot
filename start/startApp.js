@@ -9,9 +9,7 @@ function StartApp (bot) {
 	}
 
 	this.eventListen = () => {
-		bot.on('sticker', ctx => { console.log(ctx) })
-
-		bot.hears('hi', ctx => { console.log(ctx) })
+		bot.on('eventName', ctx => { console.log(ctx) })
 
 		bot.command(command, ctx => { commandListen(ctx) })
 	}

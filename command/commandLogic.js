@@ -19,6 +19,10 @@ function commandListen(ctx) {
 				ctx.reply('You use help')
 			return true
 
+			case 'start':
+				ctx.reply('You use start')
+			return true
+
 		}
 	})
 }
