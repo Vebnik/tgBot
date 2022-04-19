@@ -1,9 +1,11 @@
 const { isCommand } = require('./commandList')
 const { colorLog } = require('../system/chalkLog')
 const { help } = require('./commandLogic')
-
+const { ConnectDb } = require('../dbLog/dbConnect')
+const dataBase = new ConnectDb()
 
 function commandListen(ctx) {
+
 	isCommand(ctx).then(comm => {
 		switch (comm) {
 
