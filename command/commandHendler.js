@@ -1,12 +1,12 @@
 const { isCommand } = require('./commandList')
 const { colorLog } = require('../system/chalkLog')
 const { help } = require('./commandLogic')
-const { ConnectDb } = require('../dbLog/dbConnect')
-const dataBase = new ConnectDb()
+const logs = require('../dbLog/makeLogs')
 
 function commandListen(ctx) {
-
 	isCommand(ctx).then(comm => {
+		logs(ctx, comm)
+
 		switch (comm) {
 
 			case 'help':
@@ -22,6 +22,7 @@ function commandListen(ctx) {
 }
 
 function eventHandler(ctx) {
+	logs(ctx)
 	const msgContent = ctx.message.text
 	colorLog.log(msgContent)
 }

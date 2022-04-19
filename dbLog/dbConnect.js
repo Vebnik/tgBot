@@ -3,7 +3,7 @@ const path = require('path')
 
 
 function ConnectDb () {
-	const db = new sqlite.Database(path.resolve('tgLogs'))
+	const db = new sqlite.Database(path.join(__dirname, 'tgLogs'))
 
 	this.createTable = async (tableName) => {
 		await db.serialize(() => {
@@ -30,7 +30,3 @@ function ConnectDb () {
 }
 
 module.exports = { ConnectDb }
-
-// const dataBase = new ConnectDb()
-// dataBase.writeDb('logs', ['bik', 'test', 'hhello', '2022-04-19 22:22:34'])
-// dataBase.closeDb()
