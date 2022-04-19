@@ -1,4 +1,4 @@
-const { command, isCommand } = require('./commandList')
+const { isCommand } = require('./commandList')
 const { colorLog } = require('../system/chalkLog')
 const { help } = require('./commandLogic')
 
@@ -8,7 +8,7 @@ function commandListen(ctx) {
 		switch (comm) {
 
 			case 'help':
-				help(ctx)
+				help(ctx).catch(err => colorLog.err(err))
 			return true
 
 			case 'start':

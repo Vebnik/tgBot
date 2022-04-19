@@ -1,9 +1,5 @@
-const { makeButton } = require('../msgEmbeds/msgDecorator')
+const { makeButton, getUName } = require('../msgEmbeds/msgDecorator')
 
-
-const getUName = (ctx) => {
-	return `${ctx.message.from.first_name} ${ctx.message.from.last_name}`
-}
 
 async function help (ctx) {
 	const helpObj = [

@@ -11,4 +11,8 @@ const makeButton = async (data) => {
 	return Markup.inlineKeyboard(arrButtons, {columns: 1})
 }
 
-module.exports = { makeButton }
+const getUName = (ctx) => {
+	return `${ctx.message.from.first_name} ${ctx.message.from.last_name}`
+}
+
+module.exports = { makeButton, getUName }
