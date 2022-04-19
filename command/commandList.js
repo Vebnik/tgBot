@@ -4,4 +4,15 @@ const command = [
 	'help'
 ]
 
-module.exports = { command }
+async function isCommand(ctx) {
+	let commandTrue
+
+	await command.forEach(el => {
+		if (ctx.message.text.includes(el)) { commandTrue = el }
+	})
+
+	return commandTrue
+}
+
+
+module.exports = { command, isCommand }

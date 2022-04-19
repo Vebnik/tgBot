@@ -1,16 +1,6 @@
-const { command } = require('./commandList')
+const { command, isCommand } = require('./commandList')
 const { colorLog } = require('../system/chalkLog')
 const { help } = require('./commandLogic')
-
-async function isCommand(ctx) {
-	let commandTrue
-
-	await command.forEach(el => {
-		if (ctx.message.text.includes(el)) { commandTrue = el }
-	})
-
-	return commandTrue
-}
 
 
 function commandListen(ctx) {
